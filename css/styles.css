@@ -72,6 +72,16 @@ button {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.title {
+  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+}
+
 /* ========== header ========== */
 /* ========== logo ========== */
 
@@ -126,6 +136,7 @@ button {
   height: 80px;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--grey-color-second);
 }
 
 .page-nav {
@@ -147,20 +158,26 @@ button {
   margin-left: auto;
 }
 
-.page-header {
-  border-bottom: 1px solid var(--grey-color-second);
-}
 /* ========== hero ========== */
 
 .hero {
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 200px;
   padding-bottom: 200px;
-  background-color: var(--dark-bg-color);
+  background-color: #c4c4c4;
+  background-image: linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
   width: 696px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -174,7 +191,6 @@ button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
   padding: 10px 32px;
   font-weight: 700;
   font-size: 16px;
@@ -210,7 +226,10 @@ button {
 .filter-btn:focus {
   color: var(--accent-text-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   border: none;
+  border-radius: 4px;
 }
 
 /* ========== qualities ========== */
@@ -224,29 +243,37 @@ button {
   flex-basis: calc((100% - 90px) / 4);
 }
 
-.title {
-  margin-bottom: 50px;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--title-text-color);
+.qualities-item::before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+  background-color: var(--grey-bg-color);
 }
 
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
+.icon-antenna::before {
+background-image: url('../images/antenna.svg');
+}
+
+.icon-clock::before {
+background-image: url('../images/clock.svg');
+}
+
+.icon-diagram::before {
+background-image: url('../images/diagram.svg');
+}
+
+.icon-astronaut::before {
+background-image: url('../images/astronaut.svg');
 }
 
 .qualities-subtitle {
+  margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
@@ -255,7 +282,6 @@ button {
 }
 
 .qualities-text {
-  margin-top: 10px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -298,6 +324,7 @@ button {
 }
 
 .team-subtitle {
+  margin-bottom: 10px;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
@@ -307,7 +334,7 @@ button {
 }
 
 .team-text {
-  margin-top: 10px;
+  margin-bottom: 16px;
   text-align: center;
   font-size: 16px;
   line-height: 1.19;
@@ -315,24 +342,59 @@ button {
   color: var(--primary-text-color);
 }
 
+/* ========== clients ========== */
+
+.clients-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.clients-link {
+  display: block;
+  width: 170px;
+  height: 92px;
+  outline: 1px solid violet;
+}
+
 /* ========== portfolio ========== */
 
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 .filter-list {
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   column-gap: 8px;
 }
 
 .portfolio-list {
-  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
 }
 
 .portfolio-item {
   flex-basis: calc((100% - 60px) / 3);
   background-color: var(--primary-bg-color);
+}
+
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-item-description {
@@ -342,6 +404,7 @@ button {
 }
 
 .portfolio-subtitle {
+  margin-bottom: 4px;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
@@ -349,7 +412,6 @@ button {
 }
 
 .portfolio-text {
-  margin-top: 4px;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
@@ -364,6 +426,11 @@ button {
   background-color: var(--dark-bg-color);
 }
 
+.page-footer > .container {
+  display: flex;
+  align-items: baseline;
+}
+
 .page-footer .logo {
   color: var(--accent-text-color);
 }
@@ -372,8 +439,8 @@ button {
   margin-top: 20px;
 }
 
-.footer-contact-item:not(:first-child) {
-  margin-top: 9px;
+.footer-contact-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .footer-address-link,
@@ -393,4 +460,72 @@ button {
 .footer-contact-link:hover,
 .footer-contact-link:focus {
   color: var(--accent-color);
+}
+
+.page-footer-container {
+  margin-right: 70px;
+}
+
+/* ========== social ========== */
+
+.social-subtitle {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent-text-color);
+}
+
+.social-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.social-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  color: var(--accent-text-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.instagram {
+color: var(--accent-text-color);
+background-image: url('../images/instagram.svg');
+}
+
+.twitter {
+background-image: url('../images/twitter.svg');
+}
+
+.facebook {
+background-image: url('../images/facebook.svg');
+}
+
+.linkedin {
+background-image: url('../images/linkedin.svg');
+}
+
+.team-social-link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: orange;
+  border-radius: 50%;
 }
