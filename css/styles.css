@@ -121,6 +121,10 @@ button {
 
 /* ========== contact ========== */
 
+.page-header {
+  border-bottom: 1px solid var(--grey-color-second);
+}
+
 .page-header .contact-link {
   font-weight: 500;
   font-size: 14px;
@@ -138,7 +142,6 @@ button {
   height: 80px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--grey-color-second);
 }
 
 .page-nav {
