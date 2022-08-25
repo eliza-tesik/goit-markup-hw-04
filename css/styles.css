@@ -12,6 +12,8 @@
   --black-color: #000000;
   --grey-color-first: #eeeeee;
   --grey-color-second: #ececec;
+  --icons-color: #afb1b8;
+  --icons-background: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -158,6 +160,16 @@ button {
   margin-left: auto;
 }
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.contact-icon {
+  fill: currentColor;
+}
+
 /* ========== hero ========== */
 
 .hero {
@@ -243,33 +255,20 @@ button {
   flex-basis: calc((100% - 90px) / 4);
 }
 
-.qualities-item::before {
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 120px;
-  margin-bottom: 30px;
-  border-radius: 4px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70px;
-  background-color: var(--grey-bg-color);
+.qualities-icon-box {
+width: 100%;
+height: 120px;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 30px;
+background-color: var(--grey-bg-color);
+border-radius: 4px;
 }
 
-.icon-antenna::before {
-background-image: url('../images/antenna.svg');
-}
-
-.icon-clock::before {
-background-image: url('../images/clock.svg');
-}
-
-.icon-diagram::before {
-background-image: url('../images/diagram.svg');
-}
-
-.icon-astronaut::before {
-background-image: url('../images/astronaut.svg');
+.qualities-icon {
+  width: 70px;
+  height: 70px;
 }
 
 .qualities-subtitle {
@@ -344,18 +343,41 @@ background-image: url('../images/astronaut.svg');
 
 /* ========== clients ========== */
 
-.clients-container {
+.clients-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+  margin: 0;
   gap: 30px;
 }
 
-.clients-link {
-  display: block;
+.clients-item {
   width: 170px;
   height: 92px;
-  outline: 1px solid violet;
+}
+
+.clients-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  border-radius: 4px;
+  color: var(--icons-color);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-color);
+  /* background-color: #000000; */
+}
+
+.clients-icon {
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
 }
 
 /* ========== portfolio ========== */
@@ -480,20 +502,22 @@ background-image: url('../images/astronaut.svg');
 
 .social-list {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   column-gap: 10px;
 }
-
-.social-link {
-  display: inline-block;
+.social-item {
   width: 44px;
   height: 44px;
+}
+.social-link {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   color: var(--accent-text-color);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--icons-background);
   border-radius: 50%;
 }
 
@@ -503,29 +527,35 @@ background-image: url('../images/astronaut.svg');
   border-radius: 50%;
 }
 
-.instagram {
-color: var(--accent-text-color);
-background-image: url('../images/instagram.svg');
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
-.twitter {
-background-image: url('../images/twitter.svg');
-}
-
-.facebook {
-background-image: url('../images/facebook.svg');
-}
-
-.linkedin {
-background-image: url('../images/linkedin.svg');
+.team-social-item {
+  width: 44px;
+  height: 44px;
 }
 
 .team-social-link {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: orange;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--icons-color);
   border-radius: 50%;
+}
+
+.team-social-link:hover,
+.team-social-link:focus {
+  color: var(--accent-text-color);
+  background-color: var(--accent-color);
+}
+
+.team-social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
